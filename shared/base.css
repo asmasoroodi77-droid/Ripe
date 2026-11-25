@@ -1,0 +1,25 @@
+/* =========================================================
+   2. BASE
+   ========================================================= */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  font-family:"DM Sans",system-ui,sans-serif; font-optical-sizing:auto; color:var(--text);
+  background-color:var(--stage);
+  -webkit-font-smoothing:antialiased; transition:background-color .3s;
+}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:10px}
+svg{display:block}
+
+/* Typography roles */
+.t-display{font-size:var(--fs-display);font-weight:900;line-height:.98;letter-spacing:-.045em}
+.t-h2{font-size:var(--fs-h2);font-weight:900;line-height:1.05;letter-spacing:-.035em}
+.t-h3{font-size:var(--fs-h3);font-weight:800;line-height:1.1;letter-spacing:-.025em}
+.t-h4{font-size:var(--fs-h4);font-weight:800;line-height:1.2;letter-spacing:-.015em}
+.t-body{font-size:var(--fs-body);font-weight:500;line-height:1.45}
+.t-sm{font-size:var(--fs-sm);font-weight:500;line-height:1.4}
+.t-cap{font-size:var(--fs-cap);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.muted{color:var(--text-2)}
+.hl{color:var(--coral);font-style:italic}
+.num{font-variant-numeric:tabular-nums}

@@ -1,0 +1,32 @@
+/* =========================================================
+   8. HABITS
+   ========================================================= */
+.week-strip{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding:12px 10px;margin-bottom:28px}
+.wday{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 0;border-radius:12px;font-weight:700;font-size:12px;color:var(--text-2)}
+.wday b{font-size:18px;color:var(--text);font-weight:900}
+.wday.today{background:var(--coral);border:2px solid var(--line);color:var(--ink)}
+.wday.today b{color:var(--ink)}
+.wday .pct{width:24px;height:5px;border-radius:3px;background:var(--surface-2);border:1.5px solid var(--line);overflow:hidden}
+.wday .pct i{display:block;height:100%;background:var(--teal)}
+.habit-card{padding:18px 16px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center}
+.habit-card + .habit-card{margin-top:20px}
+.h-name{overflow-wrap:anywhere;font-weight:800;font-size:16px;line-height:1.2}
+.h-sub{font-size:12px;font-weight:700;color:var(--text-2);margin-top:3px;display:flex;flex-wrap:wrap;gap:2px 6px;align-items:center}
+.h-flame{display:inline-flex;align-items:center;gap:2px;color:var(--text)}
+.h-check{width:52px;height:52px;border-radius:50%;border:var(--bw) solid var(--line);background:var(--surface);display:grid;place-items:center;position:relative;box-shadow:3px 3px 0 var(--line);transition:transform .15s var(--ease),background .2s}
+.h-check:active{transform:scale(.88)}
+.h-check[data-done="true"]{background:var(--hc)}
+.h-check .ghost{opacity:.28;transition:opacity .15s}
+.h-check:hover .ghost,.h-check:focus-visible .ghost{opacity:.6}
+.h-check .cnt-wrap{display:flex;flex-direction:column;align-items:center;gap:1px;line-height:1}
+.h-check .cnt{font-weight:900;font-size:11px}
+.h-week{grid-column:1/-1;display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding-top:12px;border-top:2px dashed var(--dash)}
+.hd{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--text-2)}
+.hd span{width:28px;height:28px;border-radius:9px;border:2px solid var(--line);background:var(--surface);display:grid;place-items:center;transition:background .2s}
+.hd.on span{background:var(--hc)}
+.hd.off span{border-style:dashed;opacity:.35}
+.hd.future span{opacity:.4}
+.hd.today span{box-shadow:0 0 0 2.5px var(--coral)}
+.summary-row{display:flex;gap:var(--gutter);margin-bottom:32px}
+.summary-row .card{flex:1;padding:14px}
+.summary-row b{font-size:var(--fs-h2);font-weight:1000;letter-spacing:-.04em;line-height:1;display:block}

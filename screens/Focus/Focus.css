@@ -1,0 +1,26 @@
+/* =========================================================
+   7. FOCUS
+   ========================================================= */
+.device[data-screen="focus"][data-mode="focus"]{background-color:var(--mode-focus)}
+.device[data-screen="focus"][data-mode="short"]{background-color:var(--mode-short)}
+.device[data-screen="focus"][data-mode="long"]{background-color:var(--mode-long)}
+.timer-wrap{position:relative;width:300px;height:300px;margin:36px auto 0}
+.timer-wrap svg.ring{position:absolute;inset:0;transform:rotate(-90deg)}
+.timer-face{position:absolute;inset:34px;border-radius:50%;background:var(--surface);border:var(--bw) solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset -6px -6px 0 rgba(43,37,34,.06)}
+.timer-digits{font-size:var(--fs-timer);font-weight:1000;letter-spacing:-.06em;line-height:1;font-variant-numeric:tabular-nums}
+.timer-mascot{position:absolute;width:96px;right:-6px;bottom:-4px;transform:rotate(8deg);filter:drop-shadow(3px 3px 0 var(--line));transition:transform .4s var(--ease)}
+.running .timer-mascot{animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:rotate(4deg) translateY(-6px)}}
+.cycle{display:flex;gap:12px;justify-content:center;align-items:center;margin-top:var(--s6)}
+.cycle i{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);background:var(--surface);position:relative}
+.cycle i.on{background:var(--coral)}
+.cycle i.on::after{content:"";position:absolute;top:-6px;left:7px;width:6px;height:6px;background:var(--teal);border:1.5px solid var(--line);border-radius:2px 6px}
+.controls{display:flex;justify-content:center;align-items:center;gap:var(--s6);margin-top:var(--s8)}
+.play-xl{width:88px;height:88px;border-radius:30px;background:var(--btn-bg);color:var(--btn-fg);border:var(--bw) solid var(--line);box-shadow:5px 5px 0 var(--coral);display:grid;place-items:center;transition:transform .12s,box-shadow .12s}
+.play-xl:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--coral)}
+.current-task{margin-top:36px;padding:16px;display:flex;align-items:center;gap:var(--s3)}
+.current-task .lbl{flex:1;min-width:0}
+.current-task .lbl b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pomo-count{display:flex;gap:3px;margin-top:4px}
+.pomo-count i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface)}
+.pomo-count i.on{background:var(--coral)}

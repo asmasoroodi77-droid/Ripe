@@ -1,0 +1,9 @@
+/* New habit sheet */
+.swatch{width:40px;height:40px;border-radius:50%;border:var(--bw) solid var(--line)}
+.swatch[aria-pressed="true"]{box-shadow:0 0 0 3px var(--bg),0 0 0 5.5px var(--line)}
+.icon-opt{width:46px;height:46px;border-radius:14px;border:2px solid var(--line);background:var(--surface);display:grid;place-items:center}
+.icon-opt[aria-pressed="true"]{background:var(--honey);color:var(--ink);box-shadow:2px 2px 0 var(--line)}
+.daypick{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:10px}
+.daypick button{height:40px;border-radius:12px;border:2px solid var(--line);background:var(--surface);font-weight:800;font-size:13px}
+.daypick button[aria-pressed="true"]{background:var(--teal);color:var(--ink)}
+#f-remind{font-size:16px}

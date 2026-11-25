@@ -1,0 +1,50 @@
+/* =========================================================
+   1. DESIGN TOKENS
+   Brand palette is exactly the five colours supplied.
+   Supporting neutrals: ink (warm near-black) + white.
+   ========================================================= */
+:root{
+  /* Brand (exact) */
+  --honey:#f6bd60;  --linen:#f7ede2;  --rose:#f5cac3;  --teal:#84a59d;  --coral:#f28482;
+  /* Tints (brand mixed 30% with white) — fills only */
+  --honey-100:#fcebcf; --teal-100:#dae4e2; --coral-100:#fbdad9;
+  /* Supporting neutrals */
+  --ink:#2b2522;      /* text + outlines — 13.9:1 on linen */
+  --ink-2:#5e5450;    /* secondary text — 6.4:1 on linen */
+  --white:#fffaf5;
+
+  /* Semantic surface roles (light) */
+  --bg:var(--linen); --surface:var(--white); --surface-2:#fbf4ec;
+  --text:var(--ink); --text-2:var(--ink-2); --line:var(--ink); --on-fill:var(--ink);
+  --paper-rule:rgba(43,37,34,.055);
+  --btn-bg:var(--ink); --btn-fg:var(--linen); --err:#b2413f;
+  /* Presentation stage (page behind the app column) — deliberately different from the app background */
+  --stage:var(--teal); --stage-ink:var(--ink); --stage-dot:var(--white); --stage-shadow:var(--line); --dash:rgba(43,37,34,.18);
+  --mode-focus:var(--rose); --mode-short:var(--teal-100); --mode-long:var(--honey-100);
+
+  /* Shape */
+  --bw:2.5px; --sh:4px; --r-sm:12px; --r-md:16px; --r-lg:22px; --r-xl:28px;
+
+  /* Type scale — major third (1.25), base 16 */
+  --fs-cap:12px; --fs-sm:14px; --fs-body:16px; --fs-h4:20px; --fs-h3:25px; --fs-h2:32px; --fs-display:44px; --fs-timer:76px;
+
+  /* Spacing — 4/8pt grid */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:20px; --s6:24px; --s8:32px;
+  --gutter:14px; --margin:24px;
+
+  --ease:cubic-bezier(.2,.9,.3,1.2);
+}
+/* Dark mode mapping — brand fills stay, surfaces invert, outlines become deep ink.
+   Follows the system setting unless data-theme pins one. */
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#1f1a18; --surface:#2b2522; --surface-2:#342d29;
+  --text:var(--linen); --text-2:#cbbfb4; --line:#0d0a09; --paper-rule:rgba(247,237,226,.04);
+  --btn-bg:var(--honey); --btn-fg:var(--ink); --dash:rgba(247,237,226,.12);
+  --mode-focus:var(--bg); --mode-short:var(--bg); --mode-long:var(--bg); --err:var(--coral); --stage:#22302c; --stage-ink:var(--linen); --stage-dot:var(--coral); --stage-shadow:var(--line); color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#1f1a18; --surface:#2b2522; --surface-2:#342d29;
+  --text:var(--linen); --text-2:#cbbfb4; --line:#0d0a09; --paper-rule:rgba(247,237,226,.04);
+  --btn-bg:var(--honey); --btn-fg:var(--ink); --dash:rgba(247,237,226,.12);
+  --mode-focus:var(--bg); --mode-short:var(--bg); --mode-long:var(--bg); --err:var(--coral); --stage:#22302c; --stage-ink:var(--linen); --stage-dot:var(--coral); --stage-shadow:var(--line); color-scheme:dark;
+}

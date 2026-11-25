@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7ede2">
+<title>Ripe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/tokens.css">
+<link rel="stylesheet" href="shared/base.css">
+<link rel="stylesheet" href="shared/shell.css">
+<link rel="stylesheet" href="shared/components.css">
+<link rel="stylesheet" href="shared/sheet.css">
+<link rel="stylesheet" href="screens/Home/Home.css">
+<link rel="stylesheet" href="screens/Tasks/Tasks.css">
+<link rel="stylesheet" href="screens/Focus/Focus.css">
+<link rel="stylesheet" href="screens/Habits/Habits.css">
+<link rel="stylesheet" href="screens/Progress/Progress.css">
+<link rel="stylesheet" href="screens/NewTask/NewTask.css">
+<link rel="stylesheet" href="screens/NewHabit/NewHabit.css">
+<link rel="stylesheet" href="screens/FocusPicker/FocusPicker.css">
+<link rel="stylesheet" href="shared/feedback.css">
+</head>
+<body>
+
+<div class="device" id="app" data-screen="home" data-mode="focus">
+  <main class="screens">
+    <section class="screen active" id="screen-home" aria-label="Home"></section>
+    <section class="screen" id="screen-tasks" aria-label="Tasks"></section>
+    <section class="screen" id="screen-focus" aria-label="Focus"></section>
+    <section class="screen" id="screen-habits" aria-label="Habits"></section>
+    <section class="screen" id="screen-stats" aria-label="Progress"></section>
+  </main>
+
+  <nav class="nav" aria-label="Main">
+    <button class="nav-btn" data-act="nav" data-to="home"><span class="ico" data-icon="home"></span>Home</button>
+    <button class="nav-btn" data-act="nav" data-to="tasks"><span class="ico" data-icon="tasks"></span>Tasks</button>
+    <button class="nav-focus" data-act="nav" data-to="focus" aria-label="Focus timer"><span class="mini num" id="navMini">25:00</span><span data-icon="timer" data-size="28"></span></button>
+    <button class="nav-btn" data-act="nav" data-to="habits"><span class="ico" data-icon="habits"></span>Habits</button>
+    <button class="nav-btn" data-act="nav" data-to="stats"><span class="ico" data-icon="stats"></span>Progress</button>
+  </nav>
+
+  <div class="backdrop" id="backdrop" data-act="close-sheet"></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div>
+
+<script src="data/exampleData.js"></script>
+<script src="shared/store.js"></script>
+<script src="shared/icons.js"></script>
+<script src="shared/mascot.js"></script>
+<script src="shared/parts.js"></script>
+<script src="shared/rewards.js"></script>
+<script src="shared/actions.js"></script>
+<script src="shared/timer.js"></script>
+<script src="shared/sheet.js"></script>
+<script src="screens/Home/Home.js"></script>
+<script src="screens/Tasks/Tasks.js"></script>
+<script src="screens/Focus/Focus.js"></script>
+<script src="screens/Habits/Habits.js"></script>
+<script src="screens/Progress/Progress.js"></script>
+<script src="screens/NewTask/NewTask.js"></script>
+<script src="screens/NewHabit/NewHabit.js"></script>
+<script src="screens/FocusPicker/FocusPicker.js"></script>
+<script src="main.js"></script>
+<script src="StateSwitcher.js"></script>
+</body>
+</html>

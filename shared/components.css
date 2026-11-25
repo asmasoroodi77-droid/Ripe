@@ -1,0 +1,73 @@
+/* =========================================================
+   5. COMPONENTS
+   ========================================================= */
+.card{background:var(--surface);border:var(--bw) solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh) var(--sh) 0 var(--line)}
+.fill-honey{background:var(--honey);color:var(--on-fill)}
+.fill-teal{background:var(--teal);color:var(--on-fill)}
+.fill-rose{background:var(--rose);color:var(--on-fill)}
+.fill-coral{background:var(--coral);color:var(--on-fill)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border-radius:16px;
+  border:var(--bw) solid var(--line);box-shadow:3px 3px 0 var(--line);font-weight:800;font-size:15px;background:var(--surface);
+  transition:transform .12s,box-shadow .12s;color:var(--text)}
+.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--line)}
+.btn.primary{background:var(--btn-bg);color:var(--btn-fg)}
+.btn.coral{background:var(--coral);color:var(--on-fill)}
+.btn.block{width:100%}
+.icon-btn{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;border:var(--bw) solid var(--line);
+  background:var(--surface);box-shadow:3px 3px 0 var(--line);transition:transform .12s,box-shadow .12s;flex:none}
+.icon-btn:active{transform:translate(3px,3px);box-shadow:none}
+
+.chip{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:999px;border:2px solid var(--line);
+  font-size:12px;font-weight:800;color:var(--on-fill);white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;border:1.5px solid var(--line);flex:none}
+
+.seg{display:flex;background:var(--surface);border:var(--bw) solid var(--line);border-radius:16px;padding:4px;gap:4px}
+.seg button{flex:1;height:36px;border-radius:11px;font-weight:800;font-size:14px;color:var(--text-2);display:flex;align-items:center;justify-content:center;gap:6px}
+.seg button[aria-pressed="true"]{background:var(--btn-bg);color:var(--btn-fg)}
+.seg .count{font-size:11px;padding:1px 6px;border-radius:999px;background:var(--rose);color:var(--ink)}
+
+.section-head{display:flex;align-items:baseline;justify-content:space-between;margin:44px 0 var(--s4)}
+.link{font-weight:800;font-size:14px;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:2px}
+
+.screen-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-top:var(--s4);margin-bottom:28px}
+
+/* Checkbox */
+.check{width:30px;height:30px;flex:none;border-radius:10px;border:var(--bw) solid var(--line);background:var(--surface);display:grid;place-items:center;
+  transition:background .2s,transform .2s var(--ease)}
+.check svg{opacity:0;transform:scale(.4);transition:all .25s var(--ease)}
+.check[aria-checked="true"]{background:var(--teal)}
+.check[aria-checked="true"] svg{opacity:1;transform:none;color:var(--ink)}
+.check:active{transform:scale(.88)}
+
+/* Task row */
+.task{display:flex;align-items:center;gap:var(--s4);padding:16px;background:var(--surface);border:var(--bw) solid var(--line);
+  border-radius:var(--r-md);box-shadow:3px 3px 0 var(--line);position:relative;transition:opacity .3s,transform .3s}
+.task + .task{margin-top:16px}
+.task .body{flex:1;min-width:0}
+.task .title{overflow-wrap:anywhere;font-weight:700;font-size:15px;line-height:1.3}
+.task .meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px 12px;margin-top:8px;font-size:12px;font-weight:700;color:var(--text-2)}
+.task .meta span{display:inline-flex;align-items:center;gap:4px}
+.task.done .title{text-decoration:line-through;text-decoration-thickness:2px;color:var(--text-2)}
+.task.done{background:var(--surface-2);box-shadow:none}
+.prio{display:inline-flex;align-items:center;gap:3px}
+.prio .bars{display:inline-flex;gap:1.5px;align-items:flex-end}
+.prio .bars i{width:3px;border-radius:1px;background:var(--text-2);opacity:.3}
+.prio .bars i:nth-child(1){height:5px}.prio .bars i:nth-child(2){height:8px}.prio .bars i:nth-child(3){height:11px}
+.prio[data-p="1"] .bars i{background:var(--coral);opacity:1;outline:1px solid var(--line)}
+.prio[data-p="2"] .bars i:nth-child(-n+2){background:var(--honey);opacity:1;outline:1px solid var(--line)}
+.prio[data-p="3"] .bars i:nth-child(1){background:var(--teal);opacity:1;outline:1px solid var(--line)}
+.play-mini{width:36px;height:36px;border-radius:12px;border:2px solid var(--line);background:var(--rose);display:grid;place-items:center;flex:none;color:var(--ink)}
+.play-mini:active{transform:scale(.9)}
+.task .del{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;color:var(--text-2)}
+
+
+/* Icon tile (Habits cards and Focus task card) */
+.h-icon{width:48px;height:48px;border-radius:16px;border:var(--bw) solid var(--line);display:grid;place-items:center;color:var(--ink)}
+
+.empty{padding:28px 20px;text-align:center;border:var(--bw) dashed var(--line);border-radius:var(--r-lg);color:var(--text-2);font-weight:700}
+.empty svg{margin:0 auto 10px}
+
+/* Progress bar (Home and Tasks) */
+.bar{height:14px;border:2px solid var(--line);border-radius:999px;background:var(--white);overflow:hidden}
+.bar > i{display:block;height:100%;background:var(--coral);border-right:2px solid var(--line);transition:width .6s var(--ease)}

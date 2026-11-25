@@ -1,0 +1,4 @@
+/* "Focus on…" sheet */
+.pick-item{overflow-wrap:anywhere;display:flex;align-items:center;gap:12px;width:100%;padding:14px;border-radius:16px;border:2px solid var(--line);background:var(--surface);text-align:left;font-weight:700}
+.pick-item + .pick-item{overflow-wrap:anywhere;margin-top:10px}
+.pick-item[aria-pressed="true"]{background:var(--honey);color:var(--ink);box-shadow:3px 3px 0 var(--line)}

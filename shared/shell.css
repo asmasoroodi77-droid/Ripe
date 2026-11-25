@@ -1,0 +1,30 @@
+/* App column: a phone-wide column, as tall as the browser window.
+   384px is the width inside the drawn phone outline. */
+.device{position:relative;width:100%;max-width:384px;height:100vh;height:100dvh;margin:0 auto;background:var(--bg);
+  background-image:repeating-linear-gradient(90deg,var(--paper-rule) 0 1.5px,transparent 1.5px 34px);
+  overflow:hidden;overflow:clip;display:flex;flex-direction:column;isolation:isolate;transition:background-color .4s}
+@media (max-width:520px){ .device{max-width:none} }
+
+/* =========================================================
+   4. APP SHELL — screens + bottom nav
+   ========================================================= */
+.screens{position:relative;flex:1;min-height:0}
+.screen{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;padding:var(--s3) var(--margin) 132px;
+  opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s,transform .3s var(--ease),visibility 0s .3s;scrollbar-width:none}
+.screen::-webkit-scrollbar{display:none}
+.screen.active{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .35s var(--ease)}
+
+.nav{position:absolute;left:14px;right:14px;bottom:16px;height:72px;z-index:20;background:var(--surface);
+  border:var(--bw) solid var(--line);border-radius:26px;box-shadow:var(--sh) var(--sh) 0 var(--line);
+  display:grid;grid-template-columns:repeat(5,1fr);align-items:center;padding:0 6px}
+.nav-btn{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:700;color:var(--text-2);padding:8px 0;border-radius:14px}
+.nav-btn .ico{width:40px;height:30px;display:grid;place-items:center;border-radius:12px;transition:background .2s,transform .2s var(--ease)}
+.nav-btn[aria-current="page"]{color:var(--text)}
+.nav-btn[aria-current="page"] .ico{background:var(--honey);color:var(--on-fill);border:2px solid var(--line);transform:translateY(-2px)}
+.nav-focus{justify-self:center;width:64px;height:64px;margin-top:-34px;border-radius:50%;background:var(--coral);color:var(--on-fill);
+  border:var(--bw) solid var(--line);box-shadow:3px 3px 0 var(--line);display:grid;place-items:center;position:relative;transition:transform .15s}
+.nav-focus:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--line)}
+.nav-focus[aria-current="page"]{background:var(--honey)}
+.nav-focus .mini{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--linen);
+  font-size:11px;font-weight:800;padding:2px 7px;border-radius:999px;white-space:nowrap;display:none}
+.nav-focus.running .mini{display:block}
